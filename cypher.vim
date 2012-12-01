@@ -16,9 +16,9 @@ syn case ignore
 syn match     cypherComment       "\s*\/\/.*$"
 syn keyword   cypherKeyword       cypher start create match delete where return with unique set foreach
 syn keyword   cypherKeyword       node limit order by desc
-syn keyword   cypherKeyword       or and not is null in
+syn keyword   cypherKeyword       or and not is null in as
 syn keyword   cypherKeyword       all any none single length type id nodes relationships
-syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce
+syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce collect
 
 syn keyword   cypherKeyword       abs reduce round sqrt sign
 syn keyword   cypherKeyword       str replace substring left right ltrim rtrim trim lower upper
