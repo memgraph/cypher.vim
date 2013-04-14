@@ -1,9 +1,9 @@
-cypher-vim-syntax
+Cypher Vim Syntax
 =================
 
 What is it?
 -----------
-This is a basic Vim syntax for the awesome (http://docs.neo4j.org/chunked/stable/cypher-query-lang.html)[Cypher] graph database query language.  Cypher is like SQL for graph databases.
+This is a basic [Vim](http://www.vim.org) syntax for the awesome [Cypher](http://docs.neo4j.org/chunked/stable/cypher-query-lang.html) graph database query language.  Cypher is like SQL for graph databases.  You can find Cypher on [Neo4j](http://www.neo4j.org).
 
 Why should I use it?
 --------------------
@@ -13,7 +13,7 @@ Because syntax highlighting is really helpful, that's why.  Also, we want people
 How should I use it?
 --------------------
 
-* Install the awesome (https://github.com/tpope/pathogen)[pathgen] plugin.
+* Install the awesome [pathogen](https://github.com/tpope/pathogen) Vim plugin.
 * cd .vim/bundle
 * git clone git://github.com/simpsonjulian/cypher-vim-syntax.git
 * edit a file that has the extension **.cyp**
@@ -21,7 +21,7 @@ How should I use it?
 Who should I thank?
 -------------------
 
-* (https://github.com/robinedwards)[robinedwards] for extending the syntax.
-* (https://github.com/davidszotten)[davidszotten] for making it work with pathogen.
+* [robinedwards](https://github.com/robinedwards) for extending the syntax.
+* [davidszotten](https://github.com/davidszotten) for making it work with pathogen.
 
 Thanks guys!
