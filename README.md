@@ -13,7 +13,7 @@ Because syntax highlighting is really helpful, that's why.  Also, we want people
 How should I use it?
 --------------------
 
-* Install the awesome [pathogen](https://github.com/tpope/pathogen) Vim plugin.
+* Install the awesome [pathogen](https://github.com/tpope/vim-pathogen) Vim plugin.
 * cd .vim/bundle
 * git clone git://github.com/simpsonjulian/cypher-vim-syntax.git
 * edit a file that has the extension **.cyp**
