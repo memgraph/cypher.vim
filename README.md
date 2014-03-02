@@ -16,7 +16,7 @@ How should I use it?
 * Install the awesome [pathogen](https://github.com/tpope/vim-pathogen) Vim plugin.
 * cd .vim/bundle
 * git clone git://github.com/neo4j-contrib/cypher-vim-syntax.git
-* edit a file that has the extension **.cypher**
+* edit a file that has the extension **.cypher** or **.cql**
 
 Who should I thank?
 -------------------
