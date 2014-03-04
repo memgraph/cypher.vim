@@ -15,12 +15,14 @@ endif
 syn case ignore
 syn match     cypherComment       "\s*\/\/.*$"
 syn keyword   cypherKeyword       cypher start create match optional merge delete where return with unique union all set foreach
-syn keyword   cypherKeyword       node limit order by desc
+syn keyword   cypherKeyword       node limit order by desc distinct
 syn keyword   cypherKeyword       or and not is null in as
-syn keyword   cypherKeyword       all any none single length type id nodes relationships
-syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce collect distinct count
+syn keyword   cypherKeyword       all any none single length type id nodes relationships rels labels
+syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce collect count timestamp
+syn keyword   cypherKeyword       startnode endnode
 
-syn keyword   cypherKeyword       abs reduce round sqrt sign percentileDisc stdev rand degree sin log10
+syn keyword   cypherKeyword       abs acos asin atan atan2 cos cot degrees e exp floor haversin log log10 pi radians rand round
+syn keyword   cypherKeyword       sign sin sqrt tan reduce percentileDisc stdev
 syn keyword   cypherKeyword       str replace substring left right ltrim rtrim trim lower upper
 syn keyword   cypherKeyword       case when then else end
 syn keyword   cypherKeyword       schema constraint drop assert using
