@@ -45,6 +45,6 @@ hi link cypherProperty             String
 hi link cypherPropertyName         Identifier
 hi link cypherRelationship         Identifier
 hi link cypherSymbol               Operator
-hi link cypherVariable             Identifier
+hi link cypherVariable             Normal
 
 let b:current_syntax = "cypher"
