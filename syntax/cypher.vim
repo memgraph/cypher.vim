@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:         cypher
-" Maintainer:       Julian Simpson
-" Last Change:      $Date: Mon 26 Nov 2012 14:04:59 GMT$
+" Maintainer:       Mislav Vuletić
+" Last Change:      $Date: Mon 3 May 2021$
 " Filenames:        *.cypher
 " Version:          $Id: cypher.vim,v 1.0 $
 
@@ -32,7 +32,7 @@ syn keyword   cypherKeyword       key join scan
 
 syn region    cypherProperty      start=+'+ skip=+\\\\\|\\'+ end=+'+
 syn region    cypherProperty      start=+"+ skip=+\\\\\|\\"+ end=+"+
-syn match     cypherRelationship  ":\w*_\w*"
+syn match     cypherRelationship  ":\(\w*_*\)*"
 syn match     cypherSymbol        "->"
 syn match     cypherSymbol        "<=>"
 syn match     cypherSymbol        "<-"
