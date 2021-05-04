@@ -1,9 +1,10 @@
 " Vim syntax file
-" Language:         cypher
-" Maintainer:       Mislav Vuletić
-" Last Change:      $Date: Mon 3 May 2021$
-" Filenames:        *.cypher
-" Version:          $Id: cypher.vim,v 1.0 $
+" Language:             cypher
+" Maintainer:           Mislav Vuletić
+" Last Change:          Tue 04 May 2021 11:37:14 PM CEST
+" Repository:           https://github.com/memgraph/cypher-vim-syntax/
+" Version:              1.0
+" Previous Maintainer:  Julian Simpson
 
 " Quit when a syntax file was already loaded
 if version < 600
@@ -13,38 +14,57 @@ elseif exists("b:current_syntax")
 endif
 
 syn case ignore
-syn match     cypherComment       "\s*\/\/.*$"
-syn keyword   cypherKeyword       cypher start create match optional merge delete where return with unique union all set foreach
-syn keyword   cypherKeyword       node limit order by desc descending asc ascending distinct
-syn keyword   cypherKeyword       or and not xor is null in as on false true
-syn keyword   cypherKeyword       all any none single length type id nodes relationships rels labels
-syn keyword   cypherKeyword       coalesce head last extract filter tail range reduce collect count timestamp
-syn keyword   cypherKeyword       startnode endnode
 
-syn keyword   cypherKeyword       abs acos asin atan atan2 cos cot degrees e exp floor haversin log log10 pi radians rand round
-syn keyword   cypherKeyword       sign sin sqrt tan reduce percentileDisc stdev
-syn keyword   cypherKeyword       str replace substring left right ltrim rtrim trim lower upper contains
-syn keyword   cypherKeyword       case when then else end
-syn keyword   cypherKeyword       schema constraint drop assert using
-syn keyword   cypherKeyword       unwind index call yield detach exists remove skip
-syn keyword   cypherKeyword       commit periodic load csv from starts ends
-syn keyword   cypherKeyword       key join scan
+syn region cypherProperty start=+{+ end=+}+ contains=ALLBUT,cypherLabel
+syn region cypherString matchgroup=Quote start=+'+ skip=+\\'+ end=+'+
+syn region cypherString matchgroup=Quote start=+"+ skip=+\\"+ end=+"+
 
-syn region    cypherProperty      start=+'+ skip=+\\\\\|\\'+ end=+'+
-syn region    cypherProperty      start=+"+ skip=+\\\\\|\\"+ end=+"+
-syn match     cypherRelationship  ":\(\w*_*\)*"
-syn match     cypherSymbol        "->"
-syn match     cypherSymbol        "<=>"
-syn match     cypherSymbol        "<-"
-syn match     cypherPropertyName  "\w\+:"
-syn match     cypherVariable      "\w\+"
+syn keyword cypherSpecial true false null none
 
-hi link cypherComment              Comment
-hi link cypherKeyword              Define
-hi link cypherProperty             String
-hi link cypherPropertyName         Identifier
-hi link cypherRelationship         Identifier
-hi link cypherSymbol               Operator
-hi link cypherVariable             Normal
+syn keyword cypherKeyword as call yield
+syn keyword cypherKeyword create detach delete optional mandatory match merge
+syn keyword cypherKeyword union all unwind with where distinct set remove
+syn keyword cypherKeyword return limit order by asc[ending] desc[ending]
+syn keyword cypherKeyword index unique constraint on exists skip
+syn keyword cypherKeyword case when then else end
+syn keyword cypherKeyword commit periodic schema drop using
+syn keyword cypherKeyword load csv from starts ends
+syn keyword cypherKeyword key join scan node cypher start foreach
+
+syn keyword cypherOperator or and not xor is in contains
+
+syn keyword cypherFunction id all any single length type nodes labels collect
+syn keyword cypherFunction rels relationships coalesce last extract count
+syn keyword cypherFunction head filter tail range properties size tostring
+syn keyword cypherFunction toboolean tofloat tointeger keys uniformsample
+syn keyword cypherFunction startswith endswith reverse tolower toupper
+syn keyword cypherFunction timestamp startnode endnode split
+syn keyword cypherFunction abs acos asin atan atan2 cos cot degree e exp floor
+syn keyword cypherFunction haversin log log10 pi radians rand round
+syn keyword cypherFunction sign sin sqrt tan reduce percentiledisc stdev
+syn keyword cypherFunction str replace substring left right ltrim rtrim trim
+syn keyword cypherFunction lower upper assert counter
+syn match   cypherFunction "<contains>"
+
+syn match cypherComment       "\s*\/\/.*$"
+syn match cypherNumber        "-\=\<\d*\.\=[0-9_]\>"
+syn match cypherLabel         ":\s*\(\w\|_\)\+"
+syn match cypherSymbol        "->"
+syn match cypherSymbol        "<=>"
+syn match cypherSymbol        "<-"
+syn match cypherPropertyName  "\w\+:" contained
+
+hi def link Quote               String
+hi def link cypherString        String
+hi def link cypherProperty      Normal
+hi def link cypherSpecial       Special
+hi def link cypherKeyword       Statement
+hi def link cypherFunction      Function
+hi def link cypherComment       Comment
+hi def link cypherNumber        Number
+hi def link cypherOperator      Statement
+hi def link cypherPropertyName  Identifier
+hi def link cypherLabel         Type
+hi def link cypherSymbol        Operator
 
 let b:current_syntax = "cypher"
