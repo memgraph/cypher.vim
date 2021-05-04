@@ -2,9 +2,8 @@
 " Language:             cypher
 " Maintainer:           Mislav Vuletić
 " Last Change:          Tue 04 May 2021 11:37:14 PM CEST
-" Repository:           https://github.com/memgraph/cypher-vim-syntax/
+" Repository:           https://github.com/memgraph/cypher.vim
 " Version:              1.0
-" Previous Maintainer:  Julian Simpson
 
 " Quit when a syntax file was already loaded
 if version < 600
