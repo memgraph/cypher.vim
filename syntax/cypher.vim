@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:             cypher
 " Maintainer:           Mislav Vuletić
-" Last Change:          Wed 05 May 2021 08:33:52 AM CEST
+" Last Change:          Wed 05 May 2021 03:42:13 PM CEST
 " Repository:           https://github.com/memgraph/cypher.vim
 " Version:              1.0
 
@@ -29,6 +29,12 @@ syn keyword cypherKeyword case when then else end
 syn keyword cypherKeyword commit periodic schema drop using
 syn keyword cypherKeyword load csv from starts ends
 syn keyword cypherKeyword key join scan node cypher start foreach
+syn keyword cypherKeyword explain user role identified grant privileges to
+syn keyword cypherKeyword profile header delimiter no replication replica port
+syn keyword cypherKeyword register async sync timeout free memory unlimited
+syn keyword cypherKeyword kb mb assert show info lock unlock data directory
+syn keyword cypherKeyword password for clear auth stream revoke storage users
+syn keyword cypherKeyword bfs dfs wshortest roles
 
 syn keyword cypherOperator or and not xor is in contains
 
@@ -45,6 +51,7 @@ syn keyword cypherFunction contained haversin log log10 pi radians rand round
 syn keyword cypherFunction contained sign sin sqrt tan reduce percentiledisc
 syn keyword cypherFunction contained str replace substring left right ltrim
 syn keyword cypherFunction contained lower upper assert counter
+syn keyword cypherFunction contained min max avg percentilecont stdevp
 syn match   cypherFunction "<contains>"
 
 syn match cypherFunctionCall  "\zs\w\+\ze(" contains=cypherFunction
