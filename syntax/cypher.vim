@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:             cypher
 " Maintainer:           Mislav Vuletić
-" Last Change:          Wed 05 May 2021 08:07:50 AM CEST
+" Last Change:          Wed 05 May 2021 08:33:52 AM CEST
 " Repository:           https://github.com/memgraph/cypher.vim
 " Version:              1.0
 
@@ -14,7 +14,7 @@ endif
 
 syn case ignore
 
-syn region cypherProperty start=+{+ end=+}+ contains=ALLBUT,cypherLabel
+syn region cypherProperty start=+{+ end=+}+ contains=ALLBUT,cypherLabel,cypherFunction
 syn region cypherString matchgroup=Quote start=+'+ skip=+\\'+ end=+'+
 syn region cypherString matchgroup=Quote start=+"+ skip=+\\"+ end=+"+
 
@@ -32,19 +32,22 @@ syn keyword cypherKeyword key join scan node cypher start foreach
 
 syn keyword cypherOperator or and not xor is in contains
 
-syn keyword cypherFunction id all any single length type nodes labels collect
-syn keyword cypherFunction rels relationships coalesce last extract count sum
-syn keyword cypherFunction head filter tail range properties size tostring
-syn keyword cypherFunction toboolean tofloat tointeger keys uniformsample
-syn keyword cypherFunction startswith endswith reverse tolower toupper
-syn keyword cypherFunction timestamp startnode endnode split
-syn keyword cypherFunction abs acos asin atan atan2 cos cot degree e exp floor
-syn keyword cypherFunction haversin log log10 pi radians rand round
-syn keyword cypherFunction sign sin sqrt tan reduce percentiledisc stdev
-syn keyword cypherFunction str replace substring left right ltrim rtrim trim
-syn keyword cypherFunction lower upper assert counter
+syn keyword cypherFunction contained id all any single length type nodes
+syn keyword cypherFunction contained labels collect uniformsample toupper
+syn keyword cypherFunction contained exp floor stdev rtrim trim count sum
+syn keyword cypherFunction contained rels relationships coalesce last extract
+syn keyword cypherFunction contained head filter tail range properties size
+syn keyword cypherFunction contained toboolean tofloat tointeger tostring
+syn keyword cypherFunction contained startswith endswith reverse tolower keys
+syn keyword cypherFunction contained timestamp startnode endnode split
+syn keyword cypherFunction contained abs acos asin atan atan2 cos cot degree e
+syn keyword cypherFunction contained haversin log log10 pi radians rand round
+syn keyword cypherFunction contained sign sin sqrt tan reduce percentiledisc
+syn keyword cypherFunction contained str replace substring left right ltrim
+syn keyword cypherFunction contained lower upper assert counter
 syn match   cypherFunction "<contains>"
 
+syn match cypherFunctionCall  "\zs\w\+\ze(" contains=cypherFunction
 syn match cypherComment       "\s*\/\/.*$"
 syn match cypherNumber        "-\=\<\d*\.\=[0-9_]\>"
 syn match cypherLabel         ":\s*\zs\(\w\|_\)\+\ze"
