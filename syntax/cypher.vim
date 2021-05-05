@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:             cypher
 " Maintainer:           Mislav Vuletić
-" Last Change:          Wed 05 May 2021 08:04:09 AM CEST
+" Last Change:          Wed 05 May 2021 08:07:50 AM CEST
 " Repository:           https://github.com/memgraph/cypher.vim
 " Version:              1.0
 
@@ -33,7 +33,7 @@ syn keyword cypherKeyword key join scan node cypher start foreach
 syn keyword cypherOperator or and not xor is in contains
 
 syn keyword cypherFunction id all any single length type nodes labels collect
-syn keyword cypherFunction rels relationships coalesce last extract count
+syn keyword cypherFunction rels relationships coalesce last extract count sum
 syn keyword cypherFunction head filter tail range properties size tostring
 syn keyword cypherFunction toboolean tofloat tointeger keys uniformsample
 syn keyword cypherFunction startswith endswith reverse tolower toupper
