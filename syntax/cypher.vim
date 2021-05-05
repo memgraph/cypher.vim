@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:             cypher
 " Maintainer:           Mislav Vuletić
-" Last Change:          Tue 04 May 2021 11:37:14 PM CEST
+" Last Change:          Wed 05 May 2021 08:04:09 AM CEST
 " Repository:           https://github.com/memgraph/cypher.vim
 " Version:              1.0
 
@@ -47,11 +47,11 @@ syn match   cypherFunction "<contains>"
 
 syn match cypherComment       "\s*\/\/.*$"
 syn match cypherNumber        "-\=\<\d*\.\=[0-9_]\>"
-syn match cypherLabel         ":\s*\(\w\|_\)\+"
+syn match cypherLabel         ":\s*\zs\(\w\|_\)\+\ze"
 syn match cypherSymbol        "->"
 syn match cypherSymbol        "<=>"
 syn match cypherSymbol        "<-"
-syn match cypherPropertyName  "\w\+:" contained
+syn match cypherPropertyName  "\zs\w\+\ze:" contained
 
 hi def link Quote               String
 hi def link cypherString        String
