@@ -35,6 +35,7 @@ syn keyword cypherKeyword register async sync timeout free memory unlimited
 syn keyword cypherKeyword kb mb assert show info lock unlock data directory
 syn keyword cypherKeyword password for clear auth stream revoke storage users
 syn keyword cypherKeyword bfs dfs wshortest roles
+syn keyword cypherKeyword update before after trigger execute
 
 syn keyword cypherOperator or and not xor is in contains
 
