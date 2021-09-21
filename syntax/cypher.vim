@@ -33,9 +33,11 @@ syn keyword cypherKeyword explain user role identified grant privileges to
 syn keyword cypherKeyword profile header delimiter no replication replica port
 syn keyword cypherKeyword register async sync timeout free memory unlimited
 syn keyword cypherKeyword kb mb assert show info lock unlock data directory
-syn keyword cypherKeyword password for clear auth stream revoke storage users
+syn keyword cypherKeyword password for clear auth revoke storage users
 syn keyword cypherKeyword bfs dfs wshortest roles
 syn keyword cypherKeyword update before after trigger execute
+syn keyword cypherKeyword stream topics transform
+syn keyword cypherKeyword consumer_group batch_interval batch_size
 
 syn keyword cypherOperator or and not xor is in contains
 
